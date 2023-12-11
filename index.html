@@ -11,9 +11,11 @@
 
 <body>
   <!-- main logo / nav -->
-  <header>
+  <header class="page-section">
+    <div>
     <h1>Alexander Flaherty</h1>
-    <nav>
+    </div>
+    <nav class="headernav">
       <a href="#about">About Me</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact Me</a>
@@ -23,7 +25,7 @@
 
   <!-- hero banner -->
   <section class="hero-banner">
-    <div>
+    <div id="hero-text">
       <h2>Web Developer</h2>
     </div>
   </section>
@@ -31,22 +33,65 @@
   <main class="page-wrapper">
     <!-- about me -->
     <section class="page-section" id="about">
-      <h2>About Me</h2>
-      <p></p>
+      <div class="h2main"><h2>About me:</h2></div>
+      <article class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></article>
+         <img src="./assets/images/02-run-buddy.jpg" height="200px" width="200px">
     </section>
 
     <!-- portfolio container -->
     <section class="page-section" id="work">
-      <h2>Work</h2>
-      <div>
-        <img src="" alt="Landscape photo of the ocean at sunset with people surfing" width="500" height="600">
+      <div class="h2main"><h2>Work:</h2></div>
+      <div class="applications">
+
+        <div id="application1" class="applicationGridArea">
+          <div class="appheading">
+            <h3>HTML Refactoring</h3>
+            <p>Using HTML semantics.</p>
+          </div>
+          <a href="https://pazoraf.github.io/HTML-CSS-Git-Code-Refactor-Challenge/"></a>
+        </div>
+
+        <div id="application2" class="applicationGridArea">
+          <div class="appheading">
+            <h3>Coming Soon</h3>
+            <p>Coming soon</p>
+          </div>
+          <a href="#"></a>
+        </div>
+
+        <div id="application3" class="applicationGridArea">
+          <div class="appheading">
+            <h3>Coming Soon</h3>
+            <p>Coming soon</p>
+          </div>
+          <a href="#"></a>
+        </div>
+
+        <div id="application4" class="applicationGridArea">
+          <div class="appheading">
+            <h3>Coming Soon</h3>
+            <p>Coming soon</p>
+          </div>
+          <a href="#"></a>
+        </div>
+
+        <div id="application5" class="applicationGridArea">
+          <div class="appheading">
+            <h3>Coming Soon</h3>
+            <p>Coming soon.</p>
+          </div>
+          <a href="#"></a>
+        </div>
+
       </div>
     </section>
 
     <!-- contact -->
-    <section class="page-section contact" id="contact">
-      <h2>Contact Me</h2>
-      <nav>
+    <section class="page-section" id="contact">
+      <div class="h2main"><h2>Contact Me:</h2></div>
+      <nav class="contentnav">
         <a href="#">alexander.flaherty@hotmail.com</a>
         <a href="#">GitHub</a>
         <a href="#">Twitter</a>
