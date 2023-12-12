@@ -1,3 +1,11 @@
+/*Variables added for repeating colors.*/
+:root {
+  --titlecolor: rgb(35, 30, 39);
+  --navcolor: rgb(139, 219, 41);
+  --imgoverlay: linear-gradient(to top, #836ceb67, #ad65de67);
+  --backgroundcolor: rgba(89, 72, 125, 0.8);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,16 +15,24 @@ body {
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
-
+  background-color: var(--backgroundcolor);
+}
+/*Flex used to align content in header and nav*/
+header {
+  background: var(--imgoverlay);
+  display: flex;
+  flex-flow: row;
+  padding: 5px;
 }
 
-header {
-  padding: 15px;
-  background: linear-gradient(#e66465, #9198e5);;
+header h1 {
+  margin: 5px;
+  font-size: 20px;
+  color: var(--titlecolor);
 }
 
 .headernav {
-  flex-grow: 2;
+  flex-grow: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -25,8 +41,13 @@ header {
 .headernav a {
   margin:10px;
   padding:10px;
+  font-size: 12px;
+  color: var(--navcolor);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 6px solid var(--navcolor);
 }
-
+/*Flex used to align text within hero image*/
 .hero-banner {
   display: flex;
   padding: 15px;
@@ -40,42 +61,57 @@ header {
 }
 
 #hero-text {
-
+  position: absolute;
+  background-color: var(--backgroundcolor);
+  color: var(--titlecolor);
 }
-
+/*Flex used to align content in main section*/
 .page-section {
   display: flex;
   flex-flow: row;
-  align-items: stretch;
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
-
-.content {
-
-}
-
+/*Headings in each section aligned to the left side of the page, assigned h2 its own class and used flex to do this*/
 .h2main {
-  min-width: 500px;
-  max-width: 500px;
   display: flex;
-  margin: 25px;
-  padding: 25px;
-  flex-grow: 1;
+  margin: 15px;
+  padding: 5px;
+  min-width: 100px;
+  max-width: 100px;
   justify-content: flex-end;
-  border-right: 6px solid red;
-  
+  border-right: 6px solid rgb(149, 60, 179);
 }
 
+.h2main h2 {
+  color: var(--titlecolor)
+}
+
+.content p {
+  margin: 15px;
+}
+/*Profile image changes size depending on screen size, media queries used for this*/
+#profileImage {
+  background-image: url(../images/Screenshot\ 2023-11-21\ 130944.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 10px;
+  min-width: 100px;
+  min-height: 100px;
+}
+/*Deployed apps were displayed using grid, first entry is larger than the others. For mobile and tablet there is only one column*/
 .applications {
   flex: 3 200px;
   margin: 10px;
   display: grid;
-  grid-template-rows: 600px 600px 600px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 600px 300px 300px 300px 300px;
+  grid-template-columns: 1fr;
   grid-template-areas: 
-  "app1 app1"
-  "app2 app3"
-  "app4 app5"
+  "app1"
+  "app2"
+  "app3"
+  "app4"
+  "app5"
   ;
 }
 
@@ -87,62 +123,107 @@ header {
   cursor: pointer;
   display: grid;
 }
-
+/*App images have a colored overlay that disappears on mouseover*/
 #application1 {
   grid-area: app1;
-  background-image: url("../images/02-portfolio-4.jpg");
+  background: var(--imgoverlay), url("../images/02-portfolio-4.jpg");
+}
+
+#application1:hover {
+  background: url("../images/02-portfolio-4.jpg");
 }
 
 #application2 {
   grid-area: app2;
-  background-image: url("../images/02-portfolio-3.jpg");
+  background: var(--imgoverlay), url("../images/02-portfolio-3.jpg");
 
+}
+
+#application2:hover {
+  background: url("../images/02-portfolio-3.jpg");
 }
 
 #application3 {
   grid-area: app3;
-  background-image: url("../images/02-portfolio-2.jpg");
+  background: var(--imgoverlay), url("../images/02-portfolio-2.jpg");
+}
+
+#application3:hover {
+  background: url("../images/02-portfolio-2.jpg");
 }
 
 #application4 {
   grid-area: app4;
-  background-image: url("../images/02-portfolio-4.jpg");
+  background: var(--imgoverlay), url("../images/02-run-buddy.jpg");
+}
+
+#application4:hover {
+  background: url("../images/02-run-buddy.jpg");
 }
 
 #application5 {
   grid-area: app5;
-  background-image: url("../images/02-portfolio-1.jpg");
+  background: var(--imgoverlay), url("../images/02-portfolio-1.jpg");
+}
+
+#application5:hover {
+  background: url("../images/02-portfolio-1.jpg");
 }
 
 .appheading {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--backgroundcolor);
   color: white;
 
 }
-
+/*Flex used to align content section*/
 .contentnav {
-  flex-grow: 1;
   display: flex;
+  flex-grow: 1;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.contact {
-  display: flex;
-  flex-flow: row;
+.contentnav a {
+  font-size: 20px;
+  color: var(--navcolor);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 6px solid var(--navcolor);
+}
+/*Profile image size increases when viewed on tablet*/
+@media screen and (min-width: 768px) {
+
+  #profileImage {
+    min-width: 200px;
+    min-height: 200px;
+  }
+}
+/*Grid application area splits into two columns on larger screens, profile image size increases more on desktop screens*/
+@media only screen and (min-width: 1000px) {
+.applications {
+  grid-template-rows: 600px 600px 600px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "app1 app1"
+  "app2 app3"
+  "app4 app5"
+  ;
+}  
+
+#profileImage {
+  min-width: 300px;
+  min-height: 300px;
 }
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+header h1 {
+  font-size: 25px;
 }
 
-p {
-  margin: 0;
+.headernav a {
+  font-size: 20px;
+}
+
+
 }
