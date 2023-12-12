@@ -81,4 +81,4 @@ Resources:
 ## License
 Copyright (c) 2023 Alexander Flaherty.
 
-Licensed under the [MIT](LICENSE.txt) license.
+Licensed under the [MIT](LICENSE) license.
